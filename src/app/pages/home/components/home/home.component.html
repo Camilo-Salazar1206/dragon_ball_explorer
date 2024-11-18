@@ -1,0 +1,47 @@
+<app-header (searchEvent)="onSearch($event)"></app-header>
+<div class="row">
+    <ng-container *ngIf="loading; else charactersList">
+        <app-skeleton-loader></app-skeleton-loader>
+    </ng-container>
+
+    <ng-template #charactersList>
+        <div class="row__col" *ngFor="let character of (filteredCharacters || characters)?.items">
+            <app-character-card [name]="character.name" [imageCharacter]="character.image" [description]="character.description" [id]="character.id"> ></app-character-card>
+        </div>
+        <div class="pagination">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" [class.disabled]="!characters?.links?.previous">
+                        <button class="page-link" (click)="onPageChange(1)" [disabled]="!characters?.links?.previous">
+              {{ "pagination.first" | translate }}
+            </button>
+                    </li>
+                    <li class="page-item" [class.disabled]="!characters?.links?.previous">
+                        <button class="page-link" (click)="onPageChange(currentPage - 1)" [disabled]="!characters?.links?.previous">
+              {{ "pagination.previous" | translate }}
+            </button>
+                    </li>
+                    <li class="page-item" *ngFor="let page of getPageNumbers()" [class.active]="currentPage === page">
+                        <button class="page-link" (click)="onPageChange(page)">
+              {{ page }}
+            </button>
+                    </li>
+                    <li class="page-item" [class.disabled]="!characters?.links?.next">
+                        <button class="page-link" (click)="onPageChange(currentPage + 1)" [disabled]="!characters?.links?.next">
+              {{ "pagination.next" | translate }}
+            </button>
+                    </li>
+                    <li class="page-item" [class.disabled]="!characters?.links?.next">
+                        <button class="page-link" (click)="onPageChange(characters?.meta?.totalPages ?? 1)" [disabled]="!characters?.links?.next">
+              {{ "pagination.last" | translate }}
+            </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </ng-template>
+</div>
+<!-- <ng-container *ngIf="loading">
+    <app-character-details></app-character-details>
+</ng-container> -->
+<app-character-details></app-character-details>

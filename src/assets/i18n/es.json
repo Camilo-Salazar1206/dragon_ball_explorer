@@ -1,0 +1,12 @@
+{
+    "app_name": "Dragon Ball Super",
+    "details": "Detalles",
+    "search_character": "Ingresa un nombre",
+    "search": "Buscar",
+    "pagination": {
+        "first": "Primero",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "last": "Último"
+    }
+}

@@ -1,0 +1,7 @@
+<div class="card" style="width: 25rem;">
+    <img [src]="imageCharacter" class="card__img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <a [routerLink]="['/home', name]" class="btn btn-dark">{{ 'details' | translate }}</a>
+    </div>
+</div>

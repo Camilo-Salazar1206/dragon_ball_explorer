@@ -10,7 +10,10 @@ export class CharacterCardComponent {
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
     this.translate.use('es');
+
   }
+
+
 @Input() name:string='';
 @Input() description:string='';
 @Input() imageCharacter:string="";

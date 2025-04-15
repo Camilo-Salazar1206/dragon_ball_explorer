@@ -5,7 +5,7 @@ FIRTS_OPTION='Planetas',
 
 export enum Pages{
  INITIAL_PAGE=1,
- ITEMS_LIMIT=12
+ ITEMS_LIMIT=8
 }
 export const defaultValues = {
   TRUE: true,

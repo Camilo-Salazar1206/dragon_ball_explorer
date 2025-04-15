@@ -1,9 +1,13 @@
-<div *ngIf="character; else noCharacterFound">
-    <h2>{{character.name}}</h2>
-    <img [src]="character.image" alt="{{ character.name }}">
-    <p>{{ character.description }}</p>
+<div *ngIf="character; else noCharacterFound" class="character-card">
+    <div class="background-image" [ngStyle]="{'background-image': 'url(' + character.image + ')'}"></div>
+
+    <div class="content">
+        <h2>{{ character.name }}</h2>
+        <p>{{ character.description }}</p>
+        <button class="watch-button">Watch Now</button>
+    </div>
 </div>
 
 <ng-template #noCharacterFound>
-    <p>No se encontraron detalles para este personaje.</p>
+    <p class="no-character">No se encontraron detalles para este personaje.</p>
 </ng-template>

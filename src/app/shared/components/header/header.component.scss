@@ -1,35 +1,56 @@
 .header {
     display: flex;
-    padding-right: 20px;
-    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
     width: 100%;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     justify-content: space-between;
     align-items: center;
-    background-color: #060919;
-    position: sticky;
     top: 0;
     z-index: 1000;
-    color: white;
+    color: #FF5500;
+    box-shadow: 0 0 12px rgba(255, 85, 0, 0.6);
     &__title {
         margin-right: auto;
-        margin-left: 20px;
+        margin-left: 15px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     &__img-title {
-        width: 230px;
-        height: 80px;
+        width: 180px;
+        height: 65px;
     }
     &__options {
         display: flex;
-        padding: 20px;
-        gap: 20px;
+        padding: 15px;
+        gap: 15px;
         cursor: pointer;
     }
     &__search {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    input {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 85, 0, 0.6);
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+    }
+    input::placeholder {
+        color: #FF5500;
+        opacity: 0.8;
+    }
+    button {
+        font-size: 0.8rem;
+        padding: 8px 12px;
     }
     @media (max-width: 768px) {
         flex-direction: column;
@@ -46,15 +67,24 @@
         }
         &__search {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 8px;
             order: -1;
         }
     }
 }
 
 .btn {
-    color: white;
+    color: #FF5500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid rgba(255, 85, 0, 0.6);
+    transition: all 0.3s ease-in-out;
     &:hover {
-        background-color: #1f2024;
+        background-color: rgba(255, 85, 0, 0.3);
+        color: white;
+        box-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
     }
 }

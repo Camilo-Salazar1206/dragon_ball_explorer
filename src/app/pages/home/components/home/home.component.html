@@ -1,8 +1,9 @@
-<app-header (searchEvent)="onSearch($event)"></app-header>
 <div class="row">
+    <app-header (searchEvent)="onSearch($event)"></app-header>
     <ng-container *ngIf="loading; else charactersList">
         <app-skeleton-loader></app-skeleton-loader>
     </ng-container>
+
 
     <ng-template #charactersList>
         <div class="row__col" *ngFor="let character of (filteredCharacters || characters)?.items">
@@ -41,7 +42,3 @@
         </div>
     </ng-template>
 </div>
-<!-- <ng-container *ngIf="loading">
-    <app-character-details></app-character-details>
-</ng-container> -->
-<app-character-details></app-character-details>
